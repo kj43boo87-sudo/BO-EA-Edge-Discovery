@@ -49,6 +49,9 @@ def test_records_actual_result_and_jst(logger, tmp_path, monkeypatch, exit_code)
     record = read_record(tmp_path)
     assert record["raw_returncode"] == record["wrapper_exit_code"] == record["exit_code"] == exit_code
     assert record["termination_signal"] is None
+    assert record["command_attempted"] is True
+    assert record["command_started"] is True
+    assert record["command_pid"] > 0
     assert record["status"] == ("passed" if exit_code == 0 else "failed")
     assert record["started_at_jst"].endswith("+09:00")
     assert record["finished_at_jst"].endswith("+09:00")
@@ -59,13 +62,21 @@ def test_records_actual_result_and_jst(logger, tmp_path, monkeypatch, exit_code)
     assert record["inputs"][0]["sha256"] == "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
 
 
-def test_missing_command_is_logged_as_failure(logger, tmp_path, monkeypatch):
-    assert invoke(logger, monkeypatch, [str(tmp_path / "does-not-exist")]) == 127
+@pytest.mark.parametrize("executable,error", [
+    ("does-not-exist", "FileNotFoundError"),
+    ("synthetic.txt", "PermissionError"),
+])
+def test_unstartable_command_is_logged_as_failure(logger, tmp_path, monkeypatch, executable, error):
+    assert invoke(logger, monkeypatch, [str(tmp_path / executable)]) == 127
     record = read_record(tmp_path)
     assert record["status"] == "failed"
+    assert record["command_attempted"] is True
+    assert record["command_started"] is False
+    assert record["command_pid"] is None
+    assert record["phase"] == "launch"
     assert record["raw_returncode"] is None
     assert record["wrapper_exit_code"] == 127
-    assert "FileNotFoundError" in record["error"]
+    assert error in record["error"]
 
 
 @pytest.mark.parametrize("input_name", ["absent.csv", "."])
@@ -75,6 +86,8 @@ def test_unreadable_input_has_log_without_starting_command(logger, tmp_path, mon
     record = read_record(tmp_path)
     assert record["status"] == "failed"
     assert not record["command_started"]
+    assert not record["command_attempted"]
+    assert record["command_pid"] is None
     assert record["inputs"][0]["sha256"] is None
     assert record["inputs"][0]["error"]
     assert record["raw_returncode"] is None

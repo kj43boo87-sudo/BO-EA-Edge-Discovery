@@ -57,7 +57,8 @@ def main():
             "reason": "任意コマンドの環境は推測しない。対象側で版・依存を出力して確認すること。",
         },
         "git_commit": None, "git_status": None, "inputs": [],
-        "status": "running", "phase": "preparing", "command_started": False,
+        "status": "running", "phase": "preparing", "command_attempted": False,
+        "command_started": False, "command_pid": None,
         "raw_returncode": None, "termination_signal": None,
         "wrapper_exit_code": None, "exit_code": None, "stdout": "", "stderr": "",
     }
@@ -90,17 +91,22 @@ def main():
             except OSError as exc:
                 entry["error"] = f"{type(exc).__name__}: {exc}"
                 raise
-        record.update(phase="command", command_started=True)
+        record.update(phase="launch", command_attempted=True)
         save()
-        result = capture(command)
-        raw = result.returncode
+        with subprocess.Popen(command, cwd=ROOT, text=True, stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE, errors="replace") as process:
+            # Popenが成功した後だけ、生成できたプロセスの起動を記録する。
+            record.update(phase="command", command_started=True, command_pid=process.pid)
+            save()
+            stdout, stderr = process.communicate()
+            raw = process.returncode
         wrapper_code = 128 - raw if raw < 0 else raw
         record.update(raw_returncode=raw, termination_signal=-raw if raw < 0 else None,
                       wrapper_exit_code=wrapper_code, exit_code=wrapper_code,
-                      stdout=result.stdout, stderr=result.stderr,
+                      stdout=stdout, stderr=stderr,
                       status="passed" if raw == 0 else "failed")
     except (OSError, ValueError) as exc:
-        code = 127 if record["command_started"] else 2
+        code = 127 if record["command_attempted"] else 2
         record.update(wrapper_exit_code=code, exit_code=code, status="failed",
                       error=f"{type(exc).__name__}: {exc}", stderr=str(exc))
     record["finished_at_jst"] = now()

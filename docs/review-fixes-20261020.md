@@ -60,3 +60,20 @@ next_action: PR更新後の差分・試験・原本対応を再レビュー。�
 - 修正コミットb7be793のクリーン状態から `.venv/bin/python scripts/run_logged.py --category DEV --case-id unknown --input data/sample/bars.csv -- .venv/bin/python -m pytest` を実行。22 passed in 2.06s、対象終了コード0・wrapper終了コード0。実行ログ: reports/run-20261020T171908+0900-9d13a3d70c694eb69b543d97d53d939a.json（ローカル、未退避）。
 - 最初のステージ済み差分検査では、原本スナップショットの末尾空行を検出した。本文は変更せず末尾改行1個へ正規化し、スナップショットハッシュと正規化方法の記録を更新した。最終差分検査を再実行する。
 - リモートのCI結果はPRのChecksを参照。旧df06f85の成功を修正後コードのCI成功として扱わない。
+
+## Champ再レビュー追加指摘：起動試行と成功の分離
+
+日時: 2026-10-20 17:30 JST / 区分: DEV / case_id・parent_case_id: unknown
+対象: 043fa0bへのChamp/Scout再レビュー。前回主要指摘の解消確認は受領したが、Champの新規指摘は実装上も妥当だった。
+
+確認事実: 旧実装はcapture前にcommand_started=trueとしていたため、実行ファイル不存在でも起動成功のように記録された。
+修正: command_attemptedを起動試行、command_startedをPopenの生成成功確認として分離。成功後だけPIDとstarted=trueを保存して終了を待つ。起動失敗はattempted=true/started=false/PID=null/raw_returncode=null/終了コード127。準備失敗は両フラグfalse・終了コード2を維持する。
+
+変更ファイル: scripts/run_logged.py、tests/test_run_logged.py、docs/validation-logs.md、本記録。
+実行: `.venv/bin/python -m pytest` → 23 passed in 2.45s。`git diff --check` → 成功。
+回帰確認: 実行ファイル不存在・実行権限なしの両方で起動なしを確認。正常/非正常の通常終了時には起動成功とPIDありを確認。入力失敗、クリーンコミット制限、SIGTERMの既存試験も成功。
+
+旧ログは変更しない。started=trueはプロセス生成の成功だけを示し、プログラムの初期化・正常終了は保証しない。強制終了時に最後の記録から起動結果を推測しない。対象環境unverifiedなど既存の制約は維持する。
+
+永続保存先・担当・期間・バックアップ頻度・第二保管先、実退避と読み戻しは依然未確定/未実施。環境整備のコード修正とは分けて残件管理し、正式検証の運用開始前に完了が必要。実市場データ評価、配信遅延/特徴量/MTFの監査、MQLコンパイル・MT4実行は未実施。
+engineering_status: REGRESSION_PASSED（ローカル23テスト） / decision: 追加検証 / next_owner: Champ・Scout / next_action: 起動状態修正の差分を再確認。mainへはマージしない。
