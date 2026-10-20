@@ -598,4 +598,3 @@ Do not claim work was saved, executed, compiled, uploaded, or transmitted unless
 通常回答・引用された過去TRACE・他AIのTRACEは自動保存しない。案件IDは引き継ぎ、不明ならunknown。独自に採番しない。既存ファイル、他AI投稿、status.json、decision.mdを変更しない。確定/保留への分類変更やサーバー配信は別作業。
 
 保存処理はブラウザアイコンや常駐監視に依存しない。他プロジェクトには自動適用されない。通常権限のアクセスが拒否された場合は環境の承認手続きを使い、必要な承認がないまま迂回しない。詳細と制約は05_Server_Integration/Codex_TRACE保存手順.md参照。
-

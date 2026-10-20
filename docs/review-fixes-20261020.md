@@ -54,3 +54,9 @@ engineering_status: REGRESSION_PASSED（上記ローカル試験範囲）
 decision: 追加検証（運用採用や戦略採用の判定ではない）
 next_owner: Champ / Scout
 next_action: PR更新後の差分・試験・原本対応を再レビュー。永続保存先等はユーザーが確定する。
+
+## コミット後の実行確認
+
+- 修正コミットb7be793のクリーン状態から `.venv/bin/python scripts/run_logged.py --category DEV --case-id unknown --input data/sample/bars.csv -- .venv/bin/python -m pytest` を実行。22 passed in 2.06s、対象終了コード0・wrapper終了コード0。実行ログ: reports/run-20261020T171908+0900-9d13a3d70c694eb69b543d97d53d939a.json（ローカル、未退避）。
+- 最初のステージ済み差分検査では、原本スナップショットの末尾空行を検出した。本文は変更せず末尾改行1個へ正規化し、スナップショットハッシュと正規化方法の記録を更新した。最終差分検査を再実行する。
+- リモートのCI結果はPRのChecksを参照。旧df06f85の成功を修正後コードのCI成功として扱わない。

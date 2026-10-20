@@ -4,7 +4,7 @@
 
 - Driveプロジェクト: BO-EA-Edge-Discovery（フォルダID `1_PHhcj-srWolc1_2PwxM9V5cEsP8HZ_0`）。直下に原本があることをフォルダ一覧で確認した。
 - [原本AGENTS.md](https://drive.google.com/file/d/1mfekexIm-PnSN4mlVzt76c0H2S7TxZei/view)。明示版番号なし。Drive更新日時: 2026-10-05T03:22:09.389Z（2026-10-05 12:22:09.389 JST）。
-- 取得本文をLFに正規化して `drive-agents.snapshot.md` に保存した。SHA-256: `197bd5c41e73938aef3cf337c60b2e41f1a6f4fbcd4ccb1ac194f655f6701bfd`。
+- 取得本文をLF・末尾改行1個に正規化して `drive-agents.snapshot.md` に保存した。SHA-256: `5e2ad3fcd74992a5cb46a04119234cc36b93a77d8a40430787a2d1bc809bd828`。
 - これは取得本文のスナップショットのハッシュ。Drive原本バイト列のハッシュや過去ログの `27232df4...` との一致は主張しない。
 - 別コピー（ID `1jsI6atLLYmugvF-lNeoE0ySw4Il_GcS8`、更新日時2026-10-05T03:22:19.273Z）も取得し、取得本文の一致を確認した。プロジェクト直下のファイルを参照元とし、更新日時だけで別コピーを原本へ昇格しない。
 - 確認日: 2026-10-20 JST。Driveへの書き戻し・共有設定変更は実施していない。
