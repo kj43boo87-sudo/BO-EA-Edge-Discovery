@@ -37,3 +37,22 @@ src/bo_validation/time_boundary.py はタイムゾーン付き CloseTime と判�
 コード・テスト・文書・固定依存・小さな人工サンプルをGit管理します。仮想環境、認証情報、実データ、大容量Tickデータ、生成レポートはGit管理しません。実データは必ず data/sample/ の外へ置きます。.gitignore は既に追跡済みのファイルには効かないため、コミット前に `git status` と `git diff --cached` を確認してください。
 
 作業ルールは AGENTS.md を参照してください。ログ日時はJST、環境整備の区分はUTL、案件ID不明時はunknownです。市場検証時はBO/FX/STKを区別します。mainへ直接push・自動マージせず、作業ブランチでレビューします。
+
+## 追加の再現性確認とCI
+
+```bash
+bash scripts/check_clean_setup.sh
+```
+
+既存の .venv を保持し、一時ディレクトリに空の仮想環境を作って固定依存・依存整合性・全テストを確認します。一時環境は終了時に削除します。これはOS全体の再構築ではありません。
+GitHub Actions（.github/workflows/python-validation.yml）でもpush・PR・手動実行時に同じ確認を行います。CIは読み取り権限のみで、pushやマージは行いません。GitHub上の実行結果はリモートに反映後に確認してください。
+
+## 実データの受入とJSTログ
+
+- 受入手順: [docs/data-intake.md](docs/data-intake.md)
+- メタデータひな形: [docs/templates/data-metadata.json](docs/templates/data-metadata.json)。初期状態は検証対象外です。
+- ログの実行方法と記録ひな形: [docs/validation-logs.md](docs/validation-logs.md)
+
+```bash
+.venv/bin/python scripts/run_logged.py --category UTL --case-id unknown --input data/sample/bars.csv -- .venv/bin/python -m pytest
+```
