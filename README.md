@@ -1,1 +1,39 @@
 # BO-EA-Edge-Discovery
+
+BO用EA・サインツール開発のPython検証基盤です。今回の範囲は環境整備と人工データの時刻境界テストのみです。売買戦略・成績検証は含みません。
+
+## 環境の再構築
+
+Python 3.12 と Bash を用意し、リポジトリのルートで実行してください（Linux/macOS/WSL）。動作確認環境は docs/setup-validation.md に記録します。
+
+```bash
+bash scripts/setup.sh
+# Pythonを指定する場合
+PYTHON_BIN=python3.12 bash scripts/setup.sh
+```
+
+スクリプトは .venv を作成し、requirements.lock の固定依存をインストールして依存整合性とテストを確認します。既存の .venv がある場合は再利用します。完全に作り直す場合は既存 .venv を別名へ退避してから実行してください。他のPythonバージョン・OSは未検証です。
+
+## テスト実行
+
+```bash
+.venv/bin/python -m pytest
+.venv/bin/python -m pip check
+```
+
+src/bo_validation/time_boundary.py はタイムゾーン付き CloseTime と判定時刻を比較し、確定足だけを返します。未来の足による穴埋めはしません。人工サンプルは実市場データではありません。
+
+## データの配置
+
+- data/sample/: Git管理する人工サンプルと生成元の説明のみ。
+- data/raw/: 原本の実データ（Git対象外）。原本を上書きしないでください。
+- data/processed/: 派生データ（Git対象外）。
+- reports/: 生成レポート・検証ログ（Git対象外）。
+
+実データごとに生成元、取得日時、銘柄、時刻基準、タイムゾーン、OpenTime/CloseTimeの意味、加工履歴をローカルのメタデータに記録してください。生成元不明のデータは検証から除外し、理由を記録します。固定時差を推測して補正しないでください。実データの配信遅延等の確認は未実施です。
+
+## コードと実データの管理方針
+
+コード・テスト・文書・固定依存・小さな人工サンプルをGit管理します。仮想環境、認証情報、実データ、大容量Tickデータ、生成レポートはGit管理しません。実データは必ず data/sample/ の外へ置きます。.gitignore は既に追跡済みのファイルには効かないため、コミット前に `git status` と `git diff --cached` を確認してください。
+
+作業ルールは AGENTS.md を参照してください。ログ日時はJST、環境整備の区分はUTL、案件ID不明時はunknownです。市場検証時はBO/FX/STKを区別します。mainへ直接push・自動マージせず、作業ブランチでレビューします。
