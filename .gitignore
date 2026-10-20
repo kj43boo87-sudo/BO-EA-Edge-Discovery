@@ -218,3 +218,36 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project: credentials and local secrets
+.env.*
+!.env.example
+.aws/
+.ssh/
+credentials/
+secrets/
+*credentials*.json
+*service-account*.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Real/raw data: only documented artificial samples may be versioned
+/data/*
+!/data/sample/
+**/ticks/
+**/tick_data/
+*.tick
+*.ticks
+*.fxt
+*.hst
+*.parquet
+*.h5
+*.hdf5
+*.zip
+*.7z
+
+# Generated reports stay local
+/reports/*
+!/reports/.gitkeep

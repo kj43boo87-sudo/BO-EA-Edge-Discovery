@@ -1,0 +1,42 @@
+{
+  "dataset_id": "",
+  "category": "BO",
+  "case_id": "unknown",
+  "data_kind": "real",
+  "source": {
+    "provider": "",
+    "reference": "",
+    "acquired_at": "",
+    "license_or_usage_terms": ""
+  },
+  "instrument": "",
+  "timeframe": "",
+  "time": {
+    "basis": "",
+    "timezone": "",
+    "evidence": "",
+    "open_time_definition": "",
+    "close_time_definition": "",
+    "availability_or_delivery_delay": "",
+    "dst_policy": ""
+  },
+  "file": {
+    "path": "data/raw/REPLACE_ME.csv",
+    "sha256": "",
+    "encoding": "",
+    "columns_and_units": {}
+  },
+  "transformations": [],
+  "quality_checks": {
+    "missing_values": "unverified",
+    "duplicate_timestamps": "unverified",
+    "time_order": "unverified",
+    "open_before_close": "unverified"
+  },
+  "acceptance": {
+    "status": "excluded",
+    "reason": "未記入・未確認のため検証対象外",
+    "checked_at_jst": "",
+    "checked_by": ""
+  }
+}
