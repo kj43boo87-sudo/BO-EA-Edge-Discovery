@@ -56,3 +56,9 @@ GitHub Actions（.github/workflows/python-validation.yml）でもpush・PR・手
 ```bash
 .venv/bin/python scripts/run_logged.py --category UTL --case-id unknown --input data/sample/bars.csv -- .venv/bin/python -m pytest
 ```
+
+## 再レビュー向け補足
+
+正式ログはクリーンな作業ブランチのコミットから実行してください。ラッパー自身のPython/依存と対象コマンドの環境は区別して記録します。対象環境は自動確定せず、対象側の版出力で確認します。
+Drive原本の規則継承と同期方法は [規則継承記録](docs/governance/rules-provenance.md)、入力失敗・シグナル終了の記録仕様は [JSTログ手順](docs/validation-logs.md) を参照してください。
+通常ログ・受入メタデータの永続保存先は未確定です。[証跡の退避・復元手順](docs/evidence-retention.md) に従い、環境破棄前に保存先の確定と読み戻しを実施してください。

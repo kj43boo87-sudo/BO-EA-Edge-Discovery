@@ -52,3 +52,21 @@ def test_rejects_missing_close_time(bars):
     bars.loc[0, "CloseTime"] = pd.NaT
     with pytest.raises(ValueError, match="欠損"):
         available_bars(bars, pd.Timestamp("2026-01-01T09:10:00+09:00"))
+
+
+@pytest.mark.parametrize("operation", ["modify", "delete", "append"])
+def test_future_data_changes_do_not_change_past_result(bars, operation):
+    decision = pd.Timestamp("2026-01-01T09:10:00+09:00")
+    expected = available_bars(bars, decision)
+    future = bars["CloseTime"] > decision
+    altered = bars.copy(deep=True)
+    if operation == "modify":
+        altered.loc[future, "Close"] = -999999
+    elif operation == "delete":
+        altered = altered.loc[~future]
+    else:
+        extra = altered.loc[future].copy()
+        extra["CloseTime"] += pd.Timedelta(days=1)
+        extra["Close"] = 123456
+        altered = pd.concat([altered, extra], ignore_index=True)
+    pd.testing.assert_frame_equal(available_bars(altered, decision), expected)
