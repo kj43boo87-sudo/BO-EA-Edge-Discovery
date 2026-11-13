@@ -1,0 +1,9 @@
+﻿case_id,parent_case_id,file,total_trades,settle_delta_5m_count,settle_delta_6m_barsPassed_gt_5_count,settle_delta_gt_6m_gap_count,m1_t1_t6_continuous_count,m1_t1_t6_gap_broken_count,m1_entry_missing_or_tz_offset_count,recomputed_true_5m_01pip_win_rate_pct
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202009.csv,20,0,20,0,20,0,0,25.0
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202301.csv,29,0,28,1,29,0,0,51.72
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202403.csv,22,0,22,0,20,1,1,30.0
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202505.csv,15,0,15,0,15,0,0,46.67
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202505_DF.csv,11,0,11,0,11,0,0,36.36
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202512.csv,14,0,14,0,13,0,1,38.46
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_202604.csv,44,0,44,0,39,0,5,41.03
+GSR-SURVEY-001,GSR-2026W46,BO_BB3Sigma_Reversal_5M_Report_σ30_9.csv,51,0,51,0,48,0,3,41.67

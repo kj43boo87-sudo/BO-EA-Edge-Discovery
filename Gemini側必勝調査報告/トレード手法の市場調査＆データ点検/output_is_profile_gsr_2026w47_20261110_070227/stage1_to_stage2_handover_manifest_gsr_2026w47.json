@@ -1,0 +1,50 @@
+{
+  "pipeline_case_id": "GSR-2026W47",
+  "script_version": "1.0.2",
+  "domain_mode": "WEEKLY_SURVEY_STAGE1",
+  "generated_at_jst": "2026-11-10 07:02:48",
+  "oos_lock_enforced": true,
+  "label_free_verified": true,
+  "data_integrity_audit": {
+    "USDJPY": {
+      "csv_name": "2026.10.16USDJPY(3)-M1-No Session.csv",
+      "sha256": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+      "total_raw_rows": 4424800,
+      "pre_2015_excluded": 32103,
+      "oos_2022_plus_blocked": 1783913,
+      "is_adopted_rows": 2608784,
+      "ohlc_violations_in_is": 0
+    },
+    "EURUSD": {
+      "csv_name": "2026.10.16EURUSD(5)-M1-No Session.csv",
+      "sha256": "029bc12ccd4b244173cd9ed294c7dc8ec9f9b61cfd4499544722179158433a4d",
+      "total_raw_rows": 4424366,
+      "pre_2015_excluded": 32055,
+      "oos_2022_plus_blocked": 1781411,
+      "is_adopted_rows": 2610900,
+      "ohlc_violations_in_is": 0
+    }
+  },
+  "opportunity_ledger_csv": "is_2015_2021_opportunity_ledger_gsr_2026w47.csv",
+  "opportunity_ledger_sha256": "7f8581b693da499064dd3d0aaee2f20c2babc84d8859dfd852c923b5f91c7d38",
+  "candidate_counts_summary": {
+    "GSR-EXHAUST-001 | EURUSD | CANDIDATE | GAP_OR_INVALID_T1_T6": 52,
+    "GSR-EXHAUST-001 | EURUSD | CANDIDATE | PASS": 9395,
+    "GSR-EXHAUST-001 | EURUSD | CONTROL_ONLY | GAP_OR_INVALID_T1_T6": 43,
+    "GSR-EXHAUST-001 | EURUSD | CONTROL_ONLY | PASS": 10337,
+    "GSR-EXHAUST-001 | USDJPY | CANDIDATE | GAP_OR_INVALID_T1_T6": 46,
+    "GSR-EXHAUST-001 | USDJPY | CANDIDATE | PASS": 10263,
+    "GSR-EXHAUST-001 | USDJPY | CONTROL_ONLY | GAP_OR_INVALID_T1_T6": 64,
+    "GSR-EXHAUST-001 | USDJPY | CONTROL_ONLY | PASS": 12023,
+    "GSR-SHOCKDECAY-001 | EURUSD | CANDIDATE | GAP_OR_INVALID_T1_T6": 403,
+    "GSR-SHOCKDECAY-001 | EURUSD | CANDIDATE | PASS": 11749,
+    "GSR-SHOCKDECAY-001 | EURUSD | CONTROL_ONLY | GAP_OR_INVALID_T1_T6": 256,
+    "GSR-SHOCKDECAY-001 | EURUSD | CONTROL_ONLY | PASS": 15628,
+    "GSR-SHOCKDECAY-001 | USDJPY | CANDIDATE | GAP_OR_INVALID_T1_T6": 620,
+    "GSR-SHOCKDECAY-001 | USDJPY | CANDIDATE | PASS": 11964,
+    "GSR-SHOCKDECAY-001 | USDJPY | CONTROL_ONLY | GAP_OR_INVALID_T1_T6": 361,
+    "GSR-SHOCKDECAY-001 | USDJPY | CONTROL_ONLY | PASS": 15564,
+    "GSR-TKYFIX-001 | USDJPY | CANDIDATE | PASS": 561,
+    "GSR-TKYFIX-001 | USDJPY | CONTROL_ONLY | PASS": 616
+  }
+}

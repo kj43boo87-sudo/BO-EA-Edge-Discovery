@@ -1,0 +1,10 @@
+﻿case_id,strategy,atr_bucket,n_valid,wins,losses,win_rate_01pip_pct,ev_01pip,clb975_01pip,exceeds_breakeven
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,02_Normal_1.2_2.0p,449,232,217,51.67,-0.044098,-0.128926,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,03_Active_2.0_3.5p,229,110,119,48.03,-0.111354,-0.23028,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,04_High_>=3.5p,56,26,30,46.43,-0.141071,-0.373507,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,02_Normal_1.2_2.0p,1415,632,783,44.66,-0.17371,-0.22193,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,03_Active_2.0_3.5p,2408,1074,1334,44.6,-0.174875,-0.211545,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,04_High_>=3.5p,774,357,417,46.12,-0.146705,-0.212255,False
+GSR-FAKEOUT-001,Proposal_A_FakeoutReentry,02_Normal_1.2_2.0p,529,259,270,48.96,-0.094234,-0.175058,False
+GSR-FAKEOUT-001,Proposal_A_FakeoutReentry,03_Active_2.0_3.5p,743,366,377,49.26,-0.088694,-0.154441,False
+GSR-FAKEOUT-001,Proposal_A_FakeoutReentry,04_High_>=3.5p,129,59,70,45.74,-0.153876,-0.31063,False

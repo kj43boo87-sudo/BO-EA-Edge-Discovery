@@ -218,3 +218,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+# Exclude large historical M1 CSVs, opportunity ledgers, full outcomes, and archives
+*1.csv
+*5.csv
+*-M1-No Session.csv
+*_TimeSeries.csv
+opportunity_ledger.csv
+is_2015_2021_opportunity_ledger_*.csv
+is_2015_2021_opportunity_ledger_gsr_2026w47.csv
+outcomes.csv
+is_outcomes*.csv
+*.zip
+*.pyc

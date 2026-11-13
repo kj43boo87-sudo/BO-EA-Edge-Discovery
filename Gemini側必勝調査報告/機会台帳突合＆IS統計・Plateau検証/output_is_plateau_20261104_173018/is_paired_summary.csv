@@ -1,0 +1,3 @@
+﻿period,comparison,group,total_pairs,valid_pairs,candidate_only_invalid,I_only_invalid,both_invalid,mean_ev_candidate,mean_ev_control_I,ev_diff_mean,se_hac_diff,lower_97_5_diff,t_stat_diff_gt_0,status,hold_reason
+IS,R_minus_I_same_day,R,210,210,0,0,0,-0.06619047619047619,-0.17190476190476195,0.10571428571428573,0.05765310388370227,-0.007941859176511842,1.8336269618290177,NOT_ABOVE_ZERO,
+IS,B_minus_I_same_day,B,236,236,0,0,0,-0.20826271186440679,-0.5139830508474577,0.3057203389830509,0.10026879737058907,0.10817977235173185,3.0490077372038478,REFERENCE_POSITIVE,

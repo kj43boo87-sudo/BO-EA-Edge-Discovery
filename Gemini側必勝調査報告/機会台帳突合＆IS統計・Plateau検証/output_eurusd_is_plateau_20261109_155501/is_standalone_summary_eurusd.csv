@@ -1,0 +1,4 @@
+﻿case_id,parent_case_id,strategy,total_candidates,n_valid,n_invalid,wins_01pip,losses_01pip,raw_ties_0pt,stress_1pt_losses,win_rate_01pip_pct,breakeven_margin_01pip_pct,ev_01pip,se_hac_01pip,clb975_01pip,t_stat_01pip,win_rate_02pip_pct,ev_02pip,clb975_02pip,win_rate_03pip_pct,ev_03pip,clb975_03pip,gate2_clb_gt_0,status
+GSR-CLIMAX-001,GSR-2026W46,Proposal_B_BBClimaxReversal,734,734,0,368,366,6,14,50.14,-3.92,-0.07248,0.033197,-0.137653,-2.1833,48.23,-0.107766,-0.173415,46.87,-0.13297,-0.198623,False,FAIL_NOT_ABOVE_ZERO
+GSR-PULLBACK-001,GSR-2026W46,Proposal_C_M5TrendPullback,4598,4597,1,2063,2534,65,50,44.88,-9.18,-0.169774,0.013575,-0.196387,-12.5063,43.48,-0.19553,-0.222145,42.55,-0.212834,-0.239391,False,FAIL_NOT_ABOVE_ZERO
+GSR-FAKEOUT-001,GSR-2026W46,Proposal_A_FakeoutReentry,1401,1401,0,684,717,20,12,48.82,-5.23,-0.096788,0.025094,-0.146013,-3.8571,47.39,-0.123198,-0.172389,46.32,-0.143005,-0.192,False,FAIL_NOT_ABOVE_ZERO

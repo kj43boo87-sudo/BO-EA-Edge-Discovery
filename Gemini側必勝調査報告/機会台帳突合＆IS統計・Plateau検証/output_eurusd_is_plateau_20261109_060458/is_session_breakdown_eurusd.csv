@@ -1,0 +1,11 @@
+﻿case_id,strategy,session,n_valid,wins,losses,win_rate_01pip_pct,ev_01pip,clb975_01pip,exceeds_breakeven
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,01_Tokyo_00_05UTC,184,96,88,52.17,-0.034783,-0.169804,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,02_PreLondon_06UTC,64,35,29,54.69,0.011719,-0.238156,True
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,03_LondonEarly_07_10UTC,166,81,85,48.8,-0.097289,-0.236378,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,04_LondonMid_11_12UTC,104,48,56,46.15,-0.146154,-0.31045,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,05_NYOverlap_13_16UTC,116,57,59,49.14,-0.090948,-0.259531,False
+GSR-CLIMAX-001,Proposal_B_BBClimaxReversal,06_NYLate_17_20UTC,100,51,49,51.0,-0.0565,-0.243675,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,03_LondonEarly_07_10UTC,1885,826,1059,43.82,-0.189337,-0.230671,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,04_LondonMid_11_12UTC,862,392,470,45.48,-0.158701,-0.221034,False
+GSR-PULLBACK-001,Proposal_C_M5TrendPullback,05_NYOverlap_13_16UTC,1850,845,1005,45.68,-0.155,-0.196999,False
+GSR-FAKEOUT-001,Proposal_A_FakeoutReentry,03_LondonEarly_07_10UTC,1401,684,717,48.82,-0.096788,-0.146013,False
