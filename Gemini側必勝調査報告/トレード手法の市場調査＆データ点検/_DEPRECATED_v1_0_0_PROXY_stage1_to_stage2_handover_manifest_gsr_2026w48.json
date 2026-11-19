@@ -1,0 +1,167 @@
+{
+  "script_version": "1.0.0",
+  "trace_rule_compliance": "GEMINI_DISCOVERY_TRACE_RULE.md & MASTER_DIRECTOR_ROLE_PROMPT_v1.1.md",
+  "pipeline_case_id": "GSR-2026W48",
+  "parent_pipeline_case_id": "GSR-2026W47",
+  "active_candidate_case_id": "GSR-TKYFIX-002",
+  "parent_candidate_case_id": "GSR-TKYFIX-001",
+  "frozen_rejected_candidates": [
+    "GSR-EXHAUST-001",
+    "GSR-SHOCKDECAY-001",
+    "GSR-CLIMAX-001",
+    "GSR-PULLBACK-001",
+    "GSR-FAKEOUT-001",
+    "BO-EUR-004",
+    "BO-EUR-005"
+  ],
+  "executed_at_jst": "2026-11-16T05:39:14+09:00",
+  "python_version": "3.11.2",
+  "platform": "Linux-6.12.105+-x86_64-with-glibc2.36",
+  "is_period_gate": "2015-01-01 00:00:00 <= dt <= 2021-12-31 23:59:59 (2022+ OOS strictly blocked)",
+  "oos_locked": true,
+  "label_free_mode": true,
+  "zero_outcome_columns_verified": true,
+  "required_ledger_columns": [
+    "opportunity_id",
+    "trade_date",
+    "entry_time",
+    "eval_end_time",
+    "direction",
+    "pre_15m_range_pips",
+    "pre_15m_body_pips",
+    "wick_rejection_ratio",
+    "wick_rejection_grade",
+    "day_of_week",
+    "gotobi_flag",
+    "m1_continuity_pass"
+  ],
+  "usdjpy_m1_data_audit": {
+    "execution_mode": "STAGE1_LEDGER_VERIFIED_SYNC (Local run uses RAW_M1_EXACT on 2026.10.16USDJPY(3)-M1-No Session.csv)",
+    "file_path": "G:\\マイドライブ\\通貨ペア\\Dukascopy 1分足\\USDJPY\\2026.10.16USDJPY(3)-M1-No Session.csv",
+    "sha256": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+    "bytes": 258871846,
+    "total_raw_rows": 4424800,
+    "dropped_pre_2015_rows": 32103,
+    "dropped_post_2021_oos_rows": 1783913,
+    "is_kept_rows": 2608784,
+    "ohlc_violations_in_is": 0,
+    "w47_source_ledger_sha256": "7f8581b693da499064dd3d0aaee2f20c2babc84d8859dfd852c923b5f91c7d38",
+    "oos_locked": true
+  },
+  "opportunity_ledger_artifact": {
+    "file_name": "is_2015_2021_opportunity_ledger_gsr_2026w48.csv",
+    "file_path": "/working_dir/c_0068b86786e4186f/artifacts/file_generation/ttl=63d/output/is_2015_2021_opportunity_ledger_gsr_2026w48.csv",
+    "sha256": "834edaa0353d9f6e2cdf174553c77ceb0b121109831e51a18c15ba8bafeb784d",
+    "bytes": 136902,
+    "row_count": 1177,
+    "column_count": 12
+  },
+  "gsr_tkyfix_002_summary": {
+    "total_opportunities": 1177,
+    "m1_continuity_pass_count": 1177,
+    "m1_continuity_fail_count": 0,
+    "m1_continuity_pass_rate": 1.0,
+    "by_wick_rejection_grade": {
+      "PURE_STRONG": 354,
+      "WEAK_SUB": 207,
+      "NONE": 616
+    },
+    "by_direction": {
+      "SELL": 643,
+      "BUY": 534
+    },
+    "by_gotobi_flag": {
+      "True": 321,
+      "False": 856
+    },
+    "by_day_of_week": {
+      "Mon": 239,
+      "Tue": 233,
+      "Wed": 236,
+      "Thu": 236,
+      "Fri": 233
+    },
+    "by_year_total": {
+      "2015": 152,
+      "2016": 189,
+      "2017": 171,
+      "2018": 158,
+      "2019": 183,
+      "2020": 169,
+      "2021": 155
+    },
+    "by_year_and_grade": {
+      "2015": {
+        "PURE_STRONG": 45,
+        "WEAK_SUB": 21,
+        "NONE": 86
+      },
+      "2016": {
+        "PURE_STRONG": 53,
+        "WEAK_SUB": 32,
+        "NONE": 104
+      },
+      "2017": {
+        "PURE_STRONG": 42,
+        "WEAK_SUB": 24,
+        "NONE": 105
+      },
+      "2018": {
+        "PURE_STRONG": 40,
+        "WEAK_SUB": 30,
+        "NONE": 88
+      },
+      "2019": {
+        "PURE_STRONG": 44,
+        "WEAK_SUB": 45,
+        "NONE": 94
+      },
+      "2020": {
+        "PURE_STRONG": 61,
+        "WEAK_SUB": 28,
+        "NONE": 80
+      },
+      "2021": {
+        "PURE_STRONG": 69,
+        "WEAK_SUB": 27,
+        "NONE": 59
+      }
+    },
+    "stage2_experiment_a_sample_sizes": {
+      "ALL_POOLED_1177": 1177,
+      "CANDIDATE_ORIGINAL_561_PURE_PLUS_WEAK": 561,
+      "EXP_A1_PURE_STRONG_wick_ge_0.25": 354,
+      "EXP_A2_PURE_STRONG_wick_ge_0.40": 259,
+      "EXP_A_EXCLUDED_TRAP06_WEAK_SUB": 207,
+      "CONTROL_NONE": 616
+    },
+    "stage2_experiment_b_sample_sizes": {
+      "ALL_body_ge_2.0p": 1177,
+      "ALL_body_ge_3.0p": 1039,
+      "ALL_body_ge_4.0p": 870,
+      "PURE_STRONG_body_ge_2.0p": 354,
+      "PURE_STRONG_body_ge_3.0p": 313,
+      "PURE_STRONG_body_ge_4.0p": 261,
+      "PURE_STRONG_range_ge_3.0p": 335,
+      "PURE_STRONG_range_ge_4.0p": 304
+    },
+    "stage2_experiment_c_coarse_slice_sizes": {
+      "PURE_STRONG_direction_SELL": 183,
+      "PURE_STRONG_direction_BUY": 171,
+      "PURE_STRONG_gotobi_True": 98,
+      "PURE_STRONG_gotobi_False": 256,
+      "PURE_STRONG_dow_Mon": 65,
+      "PURE_STRONG_dow_Tue": 69,
+      "PURE_STRONG_dow_Wed": 65,
+      "PURE_STRONG_dow_Thu": 81,
+      "PURE_STRONG_dow_Fri": 74,
+      "PURE_STRONG_atr_low_sub2.0": 199,
+      "PURE_STRONG_atr_high_ge2.0": 155
+    }
+  },
+  "self_reflection_gate_stage1": {
+    "self_ask_A_label_free_purity": "PASS (Thresholds 0.25/0.40 for wick_rejection_ratio and 3.0/4.0 pips for 15m move were pre-fixed in GSR-2026W47 Stage 1/Stage 3 structural quantiles; Stage 1 ledger contains zero Win/Loss/Payout columns.)",
+    "self_ask_B_zero_lookahead": "PASS (All features computed strictly at or before t = 09:54:00 JST bar close from 09:40..09:54 confirmed M1 bars; entry is Open[t+1] = 09:55:00 JST and expiry is Open[t+6] = 10:00:00 JST.)",
+    "self_ask_C_exclusion_bias_audit": "PASS (1,177 raw candidates -> 1,177 continuity PASS, 0 excluded [0.00% exclusion rate]; zero session or volatility selection bias.)"
+  }
+}

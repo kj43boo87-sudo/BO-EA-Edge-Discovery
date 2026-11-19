@@ -230,3 +230,13 @@ outcomes.csv
 is_outcomes*.csv
 *.zip
 *.pyc
+
+# --- GSR Heavy Data & Raw M1 Exclusions (Mandatory) ---
+*.7z
+*M1-No Session*.csv
+*opportunity_ledger*.csv
+*row_level*.csv
+*full_rows*.csv
+*all_trades_raw*.csv
+**/raw_data/
+**/downloads/

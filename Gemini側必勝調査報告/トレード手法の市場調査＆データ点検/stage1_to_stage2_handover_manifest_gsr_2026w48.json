@@ -1,0 +1,18 @@
+{
+  "manifest_version": "1.0.1",
+  "status": "LOCAL_FULL_258MB_VERIFIED",
+  "case_id": "GSR-2026W48",
+  "target": "GSR-TKYFIX-002",
+  "oos_locked": true,
+  "counts": {
+    "PURE_STRONG": 360,
+    "WEAK_SUB": 201,
+    "NONE": 616
+  },
+  "sha256": {
+    "py": "2b2c6f7201f23ac1ec0f886468a8727355d423d51a3c07034e60671edf18603d",
+    "csv12": "4bd7471194c5a534863a81216e73ccc4317bcd25ebead831bbaa7b82d4278cf2",
+    "csv27": "279992b79c510fb68ab8ac556543ec37908b4ffbc9d9a54d298e35b4ce942e23",
+    "raw_m1": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29"
+  }
+}
