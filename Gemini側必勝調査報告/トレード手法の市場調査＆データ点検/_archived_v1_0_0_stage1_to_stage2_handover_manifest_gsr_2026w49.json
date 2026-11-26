@@ -1,0 +1,116 @@
+{
+  "manifest_version": "1.2.0",
+  "case_id": "GSR-2026W49",
+  "stage": "Stage 1 (Market Structure & Label-Free Opportunity Ledger)",
+  "generated_at_jst": "2026-11-23T05:15:00+09:00",
+  "execution_status": "CLOUD_STAGED_PENDING_LOCAL_RAW_M1_EXECUTION",
+  "governance_refs": {
+    "master_director_prompt": "MASTER_DIRECTOR_ROLE_PROMPT_v1.2.md (SHA256: 0caca9b9759cc28dfad5a50ef3952f2fac9b868d933b68b11d5592b36345dae9)",
+    "prior_decision": "GSR-2026W48_decision.md (SHA256: 550824ec4adca228ccf641ea5cd5c9e260085ad3cff1ab6ec86d2a6e8c5be640)",
+    "prior_handover": "GSR-202611-W4-FRI_Stage3_to_Next_Monday_Stage1_Handover.md (SHA256: c0a320b6f5b97201c9dbc3e38822d5b97b566fcb8c3bb85b9de0581aaa8f3836)"
+  },
+  "zero_proxy_rule_compliance": true,
+  "label_free_enforced": true,
+  "script": {
+    "filename": "profile_market_structure_gsr_2026w49_v1_0.py",
+    "version": "1.0.0",
+    "sha256": "725c54a0977083ba09d3c052ec3eece9cf79d040c6f962a763346d9fbef8f288"
+  },
+  "raw_m1_sources": {
+    "USDJPY": {
+      "filename": "2026.10.16USDJPY(3)-M1-No Session.csv",
+      "drive_id": "1CjCXrVsAs-x9cC1e7UL16HNEfYHb-nNO",
+      "drive_url": "https://drive.google.com/file/d/1CjCXrVsAs-x9cC1e7UL16HNEfYHb-nNO/view?usp=drivesdk",
+      "bytes": 258871846,
+      "expected_sha256": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+      "full_local_row_count": "unknown"
+    },
+    "EURUSD": {
+      "filename": "2026.10.16EURUSD(5)-M1-No Session.csv",
+      "drive_id": "1ptHcllOr9M4_EsXswLmQ2KQh19RevpfV",
+      "drive_url": "https://drive.google.com/file/d/1ptHcllOr9M4_EsXswLmQ2KQh19RevpfV/view?usp=drivesdk",
+      "bytes": 258932307,
+      "expected_sha256": "029bc12ccd4b244173cd9ed294c7dc8ec9f9b61cfd4499544722179158433a4d",
+      "full_local_row_count": "unknown"
+    },
+    "GBPUSD": {
+      "filename": "2026.10.16GBPUSD(3)-M1-No Session.csv",
+      "drive_id": "1tE67R8CLc7rpmEDO6HhxxI_xaL_56hM0",
+      "drive_url": "https://drive.google.com/file/d/1tE67R8CLc7rpmEDO6HhxxI_xaL_56hM0/view?usp=drivesdk",
+      "bytes": 258199124,
+      "expected_sha256": "unknown",
+      "full_local_row_count": "unknown"
+    }
+  },
+  "track_a_oos": {
+    "case_id": "GSR-TKYFIX-002",
+    "parent_case_id": "GSR-TKYFIX-001",
+    "oos_authorized": true,
+    "period": "2022-01-01 00:00:00 UTC onward",
+    "symbol": "USDJPY",
+    "output_csv": "oos_2022_2026_opportunity_ledger_gsr_tkyfix002_gsr_2026w49.csv",
+    "full_csv_sha256": "unknown",
+    "full_pool_rows": "unknown",
+    "full_pure_strong_rows": "unknown",
+    "cloud_snippet_verified": {
+      "source_file": "2026.10.16USDJPY(3)-M1-No Session_20220101_20221231.csv",
+      "drive_id": "1hcr3o3hWw29uRQj5Cd3oRasl5Ry0TCDB",
+      "snippet_bytes": 998755,
+      "snippet_raw_rows": 16608,
+      "snippet_pool_rows": 7,
+      "snippet_pure_strong_rows": 6,
+      "snippet_excluded_trap06_weak_sub_rows": 1,
+      "snippet_continuity_pass_rows": 7
+    }
+  },
+  "track_b_is": {
+    "oos_locked": true,
+    "period": "2015-01-01 00:00:00 UTC .. 2021-12-31 23:59:59 UTC",
+    "candidates": [
+      {
+        "case_id": "GSR-TKYFIX-003",
+        "symbols": ["USDJPY"],
+        "local_tz": "Asia/Tokyo",
+        "signal_local": "09:54:00",
+        "entry_local": "09:55:00",
+        "expiry_local": "10:00:00"
+      },
+      {
+        "case_id": "GSR-LDNFIX-001",
+        "symbols": ["EURUSD", "GBPUSD"],
+        "local_tz": "Europe/London",
+        "signal_local": "15:59:00",
+        "entry_local": "16:00:00",
+        "expiry_local": "16:05:00"
+      },
+      {
+        "case_id": "GSR-NYCUT-001",
+        "symbols": ["USDJPY", "EURUSD"],
+        "local_tz": "America/New_York",
+        "signal_local": "09:59:00",
+        "entry_local": "10:00:00",
+        "expiry_local": "10:05:00"
+      }
+    ],
+    "output_csv": "is_2015_2021_opportunity_ledger_multifix_gsr_2026w49.csv",
+    "full_csv_sha256": "unknown",
+    "full_total_rows": "unknown",
+    "dst_offsets_verified_in_sandbox": {
+      "Asia/Tokyo": ["JST(UTC+9)"],
+      "Europe/London": ["BST(UTC+1)", "GMT(UTC+0)"],
+      "America/New_York": ["EDT(UTC-4)", "EST(UTC-5)"]
+    }
+  },
+  "permanent_exclusion_list": [
+    "GSR-CLIMAX-001",
+    "GSR-PULLBACK-001",
+    "GSR-FAKEOUT-001",
+    "GSR-SURVEY-001",
+    "GSR-EXHAUST-001",
+    "GSR-SHOCKDECAY-001",
+    "BO-EUR-004",
+    "BO-EUR-005",
+    "GSR-TKYFIX-001_WEAK_SUB_TRAP06"
+  ],
+  "local_powershell_command": "python \"G:\\マイドライブ\\AIトレーサビリティ\\BO・EA Edge Discovery\\Gemini側必勝調査報告\\トレード手法の市場調査＆データ点検\\profile_market_structure_gsr_2026w49_v1_0.py\""
+}

@@ -240,3 +240,10 @@ is_outcomes*.csv
 *all_trades_raw*.csv
 **/raw_data/
 **/downloads/
+
+*.gdoc
+*.gsheet
+*.gslides
+oos_2022_2026_opportunity_ledger_gsr_tkyfix002_gsr_2026w49.csv
+is_2015_2021_opportunity_ledger_multifix_gsr_2026w49.csv
+gsr_2026w49_stage2_multifix_and_oos_verifier_v1_0.py

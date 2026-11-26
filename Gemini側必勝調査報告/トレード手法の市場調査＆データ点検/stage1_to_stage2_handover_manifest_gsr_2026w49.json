@@ -1,0 +1,187 @@
+{
+  "manifest_version": "1.2.2",
+  "script_version": "1.0.2",
+  "case_id": "GSR-2026W49",
+  "executed_at_jst": "2026-11-23T06:19:30+09:00",
+  "oos_locked_for_track_b": true,
+  "oos_authorized_for_track_a_only": true,
+  "label_free_enforced": true,
+  "zero_win_loss_columns": true,
+  "w48_exact_cohort_contract": true,
+  "raw_m1_audits": {
+    "USDJPY": {
+      "symbol": "USDJPY",
+      "file_path": "G:\\マイドライブ\\通貨ペア\\Dukascopy 1分足\\USDJPY\\2026.10.16USDJPY(3)-M1-No Session.csv",
+      "sha256": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+      "expected_sha256": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+      "sha256_matches_expected": true,
+      "bytes": 258871846,
+      "total_raw_rows": 4424800,
+      "dropped_pre_2015_rows": 32103,
+      "is_2015_2021_total_rows": 2608784,
+      "is_range_utc": [
+        "2015-01-01 22:00:00",
+        "2021-12-31 21:59:00"
+      ],
+      "oos_2022_plus_total_rows": 1783913,
+      "oos_range_utc": [
+        "2022-01-02 22:00:00",
+        "2026-10-15 23:59:00"
+      ],
+      "ohlc_anomalies_dropped": 0
+    },
+    "EURUSD": {
+      "symbol": "EURUSD",
+      "file_path": "G:\\マイドライブ\\通貨ペア\\Dukascopy 1分足\\EURUSD\\2026.10.16EURUSD(5)-M1-No Session.csv",
+      "sha256": "029bc12ccd4b244173cd9ed294c7dc8ec9f9b61cfd4499544722179158433a4d",
+      "expected_sha256": "029bc12ccd4b244173cd9ed294c7dc8ec9f9b61cfd4499544722179158433a4d",
+      "sha256_matches_expected": true,
+      "bytes": 258932307,
+      "total_raw_rows": 4424366,
+      "dropped_pre_2015_rows": 32055,
+      "is_2015_2021_total_rows": 2610900,
+      "is_range_utc": [
+        "2015-01-01 22:00:00",
+        "2021-12-31 21:59:00"
+      ],
+      "oos_2022_plus_total_rows": 1781411,
+      "oos_range_utc": [
+        "2022-01-02 22:03:00",
+        "2026-10-14 23:58:00"
+      ],
+      "ohlc_anomalies_dropped": 0
+    },
+    "GBPUSD": {
+      "symbol": "GBPUSD",
+      "file_path": "G:\\マイドライブ\\通貨ペア\\Dukascopy 1分足\\GBPUSD\\2026.10.16GBPUSD(3)-M1-No Session.csv",
+      "sha256": "05468aa45b7e08a47fa7aff608af1d08d190fd6b5298534585f9c9554e7ab803",
+      "expected_sha256": "unknown",
+      "sha256_matches_expected": "NEWLY_RECORDED",
+      "bytes": 258199124,
+      "total_raw_rows": 4425542,
+      "dropped_pre_2015_rows": 32137,
+      "is_2015_2021_total_rows": 2612846,
+      "is_range_utc": [
+        "2015-01-01 22:00:00",
+        "2021-12-31 21:59:00"
+      ],
+      "oos_2022_plus_total_rows": 1780559,
+      "oos_range_utc": [
+        "2022-01-02 22:01:00",
+        "2026-10-14 23:58:00"
+      ],
+      "ohlc_anomalies_dropped": 0
+    }
+  },
+  "track_a_oos_ledger": {
+    "file": "oos_2022_2026_opportunity_ledger_gsr_tkyfix002_gsr_2026w49.csv",
+    "sha256": "3e5c583f8b8bb5bef00846c2048c90716cb01f071d2591b65998549359758d68",
+    "bytes": 214232,
+    "label_free_columns_only": true,
+    "w48_exact_cohort_contract": true,
+    "total_pool_rows": 774,
+    "primary_pure_strong_rows": 256,
+    "control_none_rows": 428,
+    "excluded_trap06_weak_sub_rows": 90,
+    "continuity_pass_rows": 774,
+    "exclusions_count": 3,
+    "exclusions_by_reason": {
+      "MISSING_ATR_HISTORY": 3
+    }
+  },
+  "track_b_is_ledger": {
+    "file": "is_2015_2021_opportunity_ledger_multifix_gsr_2026w49.csv",
+    "sha256": "0272871721a3e96b6ace75afaa72e13708c8d398355a2cc971459d8cdec1a1c1",
+    "bytes": 1760257,
+    "label_free_columns_only": true,
+    "w48_exact_cohort_contract": true,
+    "total_rows": 5533,
+    "dst_offsets_verified": {
+      "GSR-TKYFIX-003|USDJPY": [
+        "JST(UTC+9)"
+      ],
+      "GSR-LDNFIX-001|EURUSD": [
+        "BST(UTC+1)",
+        "GMT(UTC+0)"
+      ],
+      "GSR-LDNFIX-001|GBPUSD": [
+        "BST(UTC+1)",
+        "GMT(UTC+0)"
+      ],
+      "GSR-NYCUT-001|USDJPY": [
+        "EDT(UTC-4)",
+        "EST(UTC-5)"
+      ],
+      "GSR-NYCUT-001|EURUSD": [
+        "EDT(UTC-4)",
+        "EST(UTC-5)"
+      ]
+    },
+    "summary_by_candidate": {
+      "GSR-TKYFIX-003|USDJPY": {
+        "total_rows": 1173,
+        "continuity_pass_rows": 1173,
+        "grade_counts": {
+          "WEAK_SUB": 199,
+          "NONE": 615,
+          "PURE_STRONG": 359
+        },
+        "exclusions": 12
+      },
+      "GSR-LDNFIX-001|EURUSD": {
+        "total_rows": 1127,
+        "continuity_pass_rows": 1127,
+        "grade_counts": {
+          "NONE": 446,
+          "PURE_STRONG": 420,
+          "WEAK_SUB": 261
+        },
+        "exclusions": 11
+      },
+      "GSR-LDNFIX-001|GBPUSD": {
+        "total_rows": 1157,
+        "continuity_pass_rows": 1157,
+        "grade_counts": {
+          "NONE": 439,
+          "PURE_STRONG": 462,
+          "WEAK_SUB": 256
+        },
+        "exclusions": 12
+      },
+      "GSR-NYCUT-001|USDJPY": {
+        "total_rows": 1028,
+        "continuity_pass_rows": 1027,
+        "grade_counts": {
+          "NONE": 417,
+          "PURE_STRONG": 399,
+          "WEAK_SUB": 212
+        },
+        "exclusions": 16
+      },
+      "GSR-NYCUT-001|EURUSD": {
+        "total_rows": 1048,
+        "continuity_pass_rows": 1048,
+        "grade_counts": {
+          "NONE": 445,
+          "PURE_STRONG": 392,
+          "WEAK_SUB": 211
+        },
+        "exclusions": 12
+      }
+    },
+    "exclusions_count": 63,
+    "exclusions_by_reason": {
+      "MISSING_SIGNAL_BAR_HOLIDAY_OR_GAP": 51,
+      "MISSING_ATR_HISTORY": 10,
+      "MISSING_15M_WINDOW": 1,
+      "FAIL_GAP_T+6": 1
+    }
+  },
+  "exclusions_log": {
+    "file": "exclusions_log_gsr_2026w49.csv",
+    "sha256": "951cd609d678ff05dc4a1b62daf398f0bd89966e80e8bcd29a130d835a149757",
+    "bytes": 6342,
+    "total_rows": 66
+  },
+  "script_sha256": "f4609b51f933c21bbf8db3e2f54095ee728cd6571d805b3df04531c386fb364b"
+}

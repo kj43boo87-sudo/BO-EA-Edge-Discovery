@@ -1,0 +1,78 @@
+{
+  "schema_version": "2.2",
+  "governance_version": "MASTER_DIRECTOR_ROLE_PROMPT_v1.2.md",
+  "pipeline_case_id": "GSR-2026W49",
+  "record_id": "GSR-202611-W5-WED",
+  "script_version": "1.0.0",
+  "generated_at_jst": "2026-11-25 05:50:00",
+  "verification_status": "CLOUD_GATE1_AND_COVARIATE_SHIFT_VERIFIED__LOCAL_775MB_M1_EXECUTION_READY",
+  "oos_locked_for_track_b": true,
+  "oos_authorized_for_track_a_only": true,
+  "gate1_audit": {
+    "confirmed_8files_sha256": {
+      "governance_v12": "0caca9b9759cc28dfad5a50ef3952f2fac9b868d933b68b11d5592b36345dae9",
+      "stage1_py": "f4609b51f933c21bbf8db3e2f54095ee728cd6571d805b3df04531c386fb364b",
+      "track_a_oos_csv": "3e5c583f8b8bb5bef00846c2048c90716cb01f071d2591b65998549359758d68",
+      "track_b_is_csv": "0272871721a3e96b6ace75afaa72e13708c8d398355a2cc971459d8cdec1a1c1",
+      "exclusions_csv": "951cd609d678ff05dc4a1b62daf398f0bd89966e80e8bcd29a130d835a149757",
+      "raw_m1_usdjpy": "aa778785e1a0210a17b5a9c8198664cf34f698c139b02b92322118366e929c29",
+      "raw_m1_eurusd": "029bc12ccd4b244173cd9ed294c7dc8ec9f9b61cfd4499544722179158433a4d",
+      "raw_m1_gbpusd": "05468aa45b7e08a47fa7aff608af1d08d190fd6b5298534585f9c9554e7ab803"
+    },
+    "track_a_counts": {
+      "total_pass": 774,
+      "PURE_STRONG": 256,
+      "NONE": 428,
+      "WEAK_SUB": 90,
+      "exclusions": 3
+    },
+    "track_b_counts": {
+      "total_raw": 5533,
+      "total_pass": 5532,
+      "excluded_fail_gap_t6": 1,
+      "exclusions_log": 63
+    }
+  },
+  "track_a_covariate_shift_verified": {
+    "atr14_pips": {
+      "is_med": 1.8286,
+      "is_iqr": 1.0572,
+      "oos_med": 3.175,
+      "oos_iqr": 1.6893,
+      "ratio": 1.7363
+    },
+    "pre_15m_range_pips": {
+      "is_med": 9.4,
+      "is_iqr": 5.05,
+      "oos_med": 15.4,
+      "oos_iqr": 10.025,
+      "ratio": 1.6383
+    },
+    "pre_15m_body_pips": {
+      "is_med": 5.5,
+      "is_iqr": 4.1,
+      "oos_med": 8.6,
+      "oos_iqr": 6.975,
+      "ratio": 1.5636
+    },
+    "wick_rejection_ratio": {
+      "is_med": 0.4839,
+      "is_iqr": 0.2331,
+      "oos_med": 0.5,
+      "oos_iqr": 0.2352,
+      "ratio": 1.0333
+    }
+  },
+  "output_files": {
+    "verifier_script": "gsr_2026w49_stage2_oos_and_multifix_verifier_v1_0.py",
+    "verifier_script_sha256": "2b9c5017abd9f723536f05bd4f362888642af6b9cc53e0e107a412407a9ca479",
+    "stage2_report_md": "GSR-2026W49_Stage2_OOS_and_MultiFix_Report.md",
+    "stage2_report_sha256": "50744a7fddd5afbe76244ef3d4eadb81b8e7c177d64ae7cafdcad322654c3f96",
+    "oos_standalone_diagnostics_csv": "oos_tkyfix002_standalone_and_diagnostics_gsr_2026w49.csv",
+    "oos_standalone_diagnostics_sha256": "0518271ecbe46e5b4a2293ae66123c1753c4396f2b6b14fdce74d490b5d4951e",
+    "is_multifix_standalone_csv": "is_multifix_standalone_and_ablation_gsr_2026w49.csv",
+    "is_multifix_standalone_sha256": "5fb81723968a979952372852e625569d64cd70c9baa897651f1adbc17856d2db",
+    "is_multifix_disjoint_slices_csv": "is_multifix_disjoint_slices_and_yearly_gsr_2026w49.csv",
+    "is_multifix_disjoint_slices_sha256": "b612f745b5141b7c1bfea181c1af8bffb96f7e30a6c6a160f774eea72fcf2a55"
+  }
+}
